@@ -3,6 +3,7 @@ using System.IO;
 using System.Threading.Tasks;
 using System.Globalization;
 using System.Text;
+using ShapeData.Kuju_shape;
 
 namespace ShapeReplicator
 {
@@ -48,7 +49,7 @@ namespace ShapeReplicator
                 return (false, "", "", 0, 0, false, false);
             }
 
-            var mask = ""; //m
+            var mask = "*.*"; //m
             var ffeditLocation = ""; //f
             int count = 0; //c
             float gauge = 0; //g
@@ -170,7 +171,7 @@ namespace ShapeReplicator
             Console.WriteLine("Usage: <input shape.csv> <tsection.dat> [/m:<mask>] [/f:<ffedit>] [/c:<count>] [/g:<gauge>] [/r] [/b]");
             Console.WriteLine();
             Console.WriteLine("1. Path and filename of .csv with the description of shape structure to create.");
-            Console.WriteLine("2. Path and filename of tsection.dat, i.e. \"C:\\Train\\Global\\tsection.dat\".");
+            Console.WriteLine("2. Path and filename of tsection.dat, eg. \"C:\\Train\\Global\\tsection.dat\".");
             Console.WriteLine("Paths may be omitted when files are in the current folder.");
             Console.WriteLine("/m: Create only shapes corresponding to the mask. * and ? symbols may be used, eg. /m:\"A?t*.s\"");
             Console.WriteLine("/f: Full path of ffeditc_unicode.exe if you want to compress created shapes immediately");
